@@ -1,11 +1,12 @@
 @values color-admin-main2, color-admin-main3, color-admin-main5, color-grey, color-white from '../../common/colors.css';
-@values font-regular from '../../common/size.css';
+@values font-regular, font-medium from '../../common/size.css';
 
 .sidebar {
-  width: 230px;
+  min-width: 230px;
   min-height: calc(100vh - 50px);
   background-color: color-admin-main3;
   color: color-white;
+  font-size: font-medium;
 }
 
 .profile {
@@ -48,6 +49,7 @@
   font-size: font-medium;
 }
 
+#nav > div,
 .nav > li div {
   display: flex;
   justify-content: space-between;
@@ -56,6 +58,7 @@
   padding: 0 20px;
 }
 
+#nav > div,
 .nav > li > div:hover {
   cursor: pointer;
 }

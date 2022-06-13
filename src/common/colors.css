@@ -1,8 +1,11 @@
 @values color-black: #000000;
 @values color-darkBlack: #333333;
 @values color-grey: #9a9a9a;
+@values color-dark-grey: #777;
 @values color-white: #ffffff;
 @values color-point: #dc232d;
+
+@value line-grey: #E1E1E1;
 
 @values color-admin-main1: #292929;
 @values color-admin-main2: #3F4B5C;

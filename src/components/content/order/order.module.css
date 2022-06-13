@@ -1,0 +1,40 @@
+@values color-point, color-white, color-dark-grey, line-grey from '../../../common/colors.css';
+@values font-regular, font-large from '../../../common/size.css';
+
+.container {
+  display: flex;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 18px;
+}
+.icon.first {
+  background-color: #4dc089;
+}
+.icon.second {
+  margin-left: 20px;
+  background-color: #d390e6;
+}
+
+.info {
+  width: 100%;
+  color: color-dark-grey;
+  font-size: font-regular;
+}
+
+.info > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info .count {
+  color: color-point;
+  font-size: font-large;
+}

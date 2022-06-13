@@ -1,0 +1,44 @@
+@values color-white, line-grey from '../../../common/colors.css';
+@values font-regular, font-medium from '../../../common/size.css';
+
+.contentRow {
+  display: flex;
+}
+
+.contentColumn {
+  flex-basis: 100%;
+  padding: 5px;
+}
+
+.contentColumn > div {
+  margin: 0;
+}
+
+.contentColumn > div:first-child {
+  margin-bottom: 10px;
+}
+
+.card {
+  flex-basis: 100%;
+  margin: 5px;
+  background-color: color-white;
+  border: 1px solid line-grey;
+  font-size: font-regular;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 20px;
+  font-weight: 700;
+  box-sizing: border-box;
+  border-bottom: 1px solid line-grey;
+}
+
+.body {
+  min-height: 140px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}

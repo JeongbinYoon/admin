@@ -11,7 +11,6 @@ const Sidebar = (props) => {
     } else {
       subNav.classList.add(`${styles["active"]}`);
     }
-    console.log(subNav);
   };
   return (
     <div className={styles.sidebar}>
@@ -21,7 +20,8 @@ const Sidebar = (props) => {
         </div>
         <span className={styles.userName}>아이디</span>
       </div>
-      <nav>
+      <nav id={styles.nav}>
+        <div>대시보드</div>
         <ul className={styles.nav}>
           <li>
             <div onClick={openSubNav}>

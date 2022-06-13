@@ -18,7 +18,7 @@ const Order = () => {
           </span>
         </div>
         <div>
-          <span>신규주문</span>
+          <span>결제완료</span>
           <span>
             <span className={styles.count}>0 </span>건
           </span>

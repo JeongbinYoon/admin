@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "..//order.module.css";
+import styles from "./order.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRotateLeft,
@@ -21,7 +21,7 @@ const Calculation = () => {
           </span>
         </div>
         <div>
-          <span>반품요청</span>
+          <span>반품요청 </span>
           <span>
             <span className={styles.count}>0 </span>건
           </span>
@@ -33,13 +33,7 @@ const Calculation = () => {
       </div>
       <div className={styles.info}>
         <div>
-          <span>구매확정</span>
-          <span>
-            <span className={styles.count}>0 </span>건
-          </span>
-        </div>
-        <div>
-          <span>오늘정산</span>
+          <span>오늘 구매확정</span>
           <span>
             <span className={styles.count}>0 </span>건
           </span>

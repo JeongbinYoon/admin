@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Card from "../card/card";
 import styles from "../card/card.module.css";
-import Calculation from "../order/calculation/calculation";
+import Calculation from "../order/calculation";
 import Order from "../order/order";
+import Product from "../product/product";
+import Review from "../review/review";
 
 const Dashboard = (props) => {
   return (
@@ -14,8 +16,8 @@ const Dashboard = (props) => {
       <div className={styles.contentRow}>
         <Card title={"배송/통계"} />
         <div className={styles.contentColumn}>
-          <Card title={"차량"} />
-          <Card title={"고객후기"} />
+          <Card title={"차량"} body={<Product />} />
+          <Card title={"고객후기"} body={<Review />} />
         </div>
       </div>
       <div className={styles.contentRow}>

@@ -1,0 +1,77 @@
+@values color-white, color-dark-grey, line-grey, line-light-grey from '../../../common/colors.css';
+@values font-tiny, font-basic, font-regular, font-medium, font-large from '../../../common/size.css';
+
+.container {
+  display: flex;
+}
+
+.container > div {
+  flex-basis: 100%;
+  flex-shrink: 1;
+}
+
+.container > div:first-child {
+  border-right: 1px solid line-light-grey;
+  padding-right: 20px;
+}
+
+.container > div:last-child {
+  padding-left: 20px;
+}
+
+.container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lists > li {
+  display: flex;
+}
+
+/* 첫 번째 목록 */
+.lists.first > li {
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid line-light-grey;
+}
+
+.lists.first > li .count {
+  font-size: font-large;
+  font-weight: 700;
+}
+
+/* 두 번째 목록 */
+.lists.second .type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: fit-content;
+  height: 15px;
+  margin-right: 5px;
+  padding: 2px 3px;
+  border: 1px solid line-grey;
+  color: color-dark-grey;
+  font-size: font-tiny;
+}
+
+.listTitle {
+  font-weight: 700;
+}
+
+.lists.second li {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.lists.second span {
+  margin: 0;
+}
+
+.lists.second .date {
+  margin-left: auto;
+  color: color-dark-grey;
+}

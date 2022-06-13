@@ -1,0 +1,8 @@
+.admin {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin_body {
+  display: flex;
+}

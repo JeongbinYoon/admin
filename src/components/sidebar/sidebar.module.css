@@ -1,0 +1,7 @@
+@values color-admin-main2 from '../../common/colors.css';
+
+.sidebar {
+  width: 230px;
+  min-height: calc(100vh - 50px);
+  background-color: color-admin-main2;
+}

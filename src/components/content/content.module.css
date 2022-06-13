@@ -1,0 +1,7 @@
+@values color-admin-main4 from '../../common/colors.css';
+
+.content {
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  background-color: color-admin-main4;
+}

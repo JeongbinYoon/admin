@@ -1,7 +1,83 @@
-@values color-admin-main2 from '../../common/colors.css';
+@values color-admin-main2, color-admin-main3, color-admin-main5, color-grey, color-white from '../../common/colors.css';
+@values font-regular from '../../common/size.css';
 
 .sidebar {
   width: 230px;
   min-height: calc(100vh - 50px);
+  background-color: color-admin-main3;
+  color: color-white;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
   background-color: color-admin-main2;
+}
+
+.profile .imgBox {
+  width: 55px;
+  height: 55px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile .imgBox img {
+  width: 100%;
+}
+
+.profile .userName {
+  margin-top: 10px;
+  font-size: font-regular;
+}
+
+.sidebar nav {
+  padding: 10px 0;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav > li {
+  font-size: font-medium;
+}
+
+.nav > li div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 20px;
+}
+
+.nav > li > div:hover {
+  cursor: pointer;
+}
+
+.nav_sub {
+  display: none;
+  list-style: none;
+  padding: 10px 0px 10px 20px;
+  background-color: color-admin-main5;
+}
+
+.nav_sub.active {
+  display: block;
+}
+
+.nav_sub li {
+  width: fit-content;
+  padding: 5px 0;
+  color: color-grey;
+}
+
+.nav_sub li:hover {
+  cursor: pointer;
+  color: color-white;
 }

@@ -1,8 +1,11 @@
 @values color-black: #000000;
 @values color-darkBlack: #333333;
+@values color-grey: #9a9a9a;
 @values color-white: #ffffff;
+@values color-point: #dc232d;
 
 @values color-admin-main1: #292929;
 @values color-admin-main2: #3F4B5C;
 @values color-admin-main3: #445163;
 @values color-admin-main4: #EDF0F5;
+@values color-admin-main5: #414958;

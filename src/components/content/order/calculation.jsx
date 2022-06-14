@@ -6,7 +6,7 @@ import {
   faWonSign,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Calculation = () => {
+const Calculation = ({ data }) => {
   return (
     <div className={styles.container}>
       {/* 클레임 */}
@@ -17,13 +17,13 @@ const Calculation = () => {
         <div>
           <span>취소요청</span>
           <span>
-            <span className={styles.count}>0 </span>건
+            <span className={styles.count}>{data.cancelOrder}</span> 건
           </span>
         </div>
         <div>
           <span>반품요청 </span>
           <span>
-            <span className={styles.count}>0 </span>건
+            <span className={styles.count}>{data.returnOrder}</span> 건
           </span>
         </div>
       </div>
@@ -35,7 +35,7 @@ const Calculation = () => {
         <div>
           <span>오늘 구매확정</span>
           <span>
-            <span className={styles.count}>0 </span>건
+            <span className={styles.count}>{data.todayCalculate}</span>건
           </span>
         </div>
       </div>

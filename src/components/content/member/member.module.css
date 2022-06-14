@@ -1,0 +1,30 @@
+@values color-point, line-grey from '../../../common/colors.css';
+@values font-tiny, font-basic, font-regular, font-medium, font-large from '../../../common/size.css';
+
+.member {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.member > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  color: color-point;
+  border: 1px solid color-point;
+}
+
+.count {
+  font-size: font-large;
+  font-weight: 700;
+}

@@ -3,7 +3,7 @@ import styles from "./order.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGift, faTruck } from "@fortawesome/free-solid-svg-icons";
 
-const Order = () => {
+const Order = ({ data }) => {
   return (
     <div className={styles.container}>
       {/* 주문 */}
@@ -14,13 +14,13 @@ const Order = () => {
         <div>
           <span>결제대기</span>
           <span>
-            <span className={styles.count}>0 </span>건
+            <span className={styles.count}>{data.waitPayment}</span> 건
           </span>
         </div>
         <div>
           <span>결제완료</span>
           <span>
-            <span className={styles.count}>0 </span>건
+            <span className={styles.count}>{data.compPayment}</span> 건
           </span>
         </div>
       </div>
@@ -32,19 +32,19 @@ const Order = () => {
         <div>
           <span>배송준비</span>
           <span>
-            <span className={styles.count}>0 </span>건
+            <span className={styles.count}>{data.deliveryReady}</span> 건
           </span>
         </div>
         <div>
           <span>배송중</span>
           <span>
-            <span className={styles.count}>0 </span>건
+            <span className={styles.count}>{data.deliveryGoing}</span> 건
           </span>
         </div>
         <div>
           <span>배송완료</span>
           <span>
-            <span className={styles.count}>0 </span>건
+            <span className={styles.count}>{data.deliveryComp}</span> 건
           </span>
         </div>
       </div>

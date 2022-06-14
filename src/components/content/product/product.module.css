@@ -1,8 +1,9 @@
-@values color-white, color-dark-grey, line-grey, line-light-grey from '../../../common/colors.css';
-@values font-tiny, font-basic, font-regular, font-medium, font-large from '../../../common/size.css';
+@values color-dark-grey, line-grey, line-light-grey from '../../../common/colors.css';
+@values font-tiny, font-large from '../../../common/size.css';
 
 .container {
   display: flex;
+  width: 100%;
 }
 
 .container > div {

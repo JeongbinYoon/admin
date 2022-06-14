@@ -1,9 +1,18 @@
-import React from "react";
+import userEvent from "@testing-library/user-event";
+import React, { useEffect, useState } from "react";
 import styles from "./product.module.css";
 
 const Product = ({ data }) => {
-  let carInfo = data.carInfo;
-  let recentCreateList = data.recentCreateList;
+  const [carInfo, setCarInfo] = useState(data.carInfo);
+  const [recentCreateList, setRecentCreateList] = useState(
+    data.recentCreateList
+  );
+
+  useEffect(() => {
+    setCarInfo(data.carInfo);
+    setRecentCreateList(data.recentCreateList);
+  }, [data]);
+
   return (
     <div className={styles.container}>
       <div>
@@ -31,37 +40,18 @@ const Product = ({ data }) => {
       <div>
         <span className={styles.listTitle}>최근 등록 차량</span>
         <ul className={`${styles.lists} ${styles.second}`}>
-          {recentCreateList.map((data) => {
-            return (
-              <li key={data.createDate}>
-                <span className={styles.type}>
-                  {data.importStatus === "0" ? "국산" : "수입"}
-                </span>
-                <span>{data.carName}</span>
-                <span className={styles.date}>{data.createDate}</span>
-              </li>
-            );
-          })}
-          {/* <li>
-            <span className={styles.type}>국산</span>
-            <span>{recentCreateList.carName}</span>
-            <span className={styles.date}>06.13</span>
-          </li>
-          <li>
-            <span className={styles.type}>수입</span>
-            <span>기아 올 뉴 k7 하이브리드 노블레스</span>
-            <span className={styles.date}>06.13</span>
-          </li>
-          <li>
-            <span className={styles.type}>국산</span>
-            <span>기아 올 뉴 k7 하이브리드 노블레스</span>
-            <span className={styles.date}>06.13</span>
-          </li>
-          <li>
-            <span className={styles.type}>국산</span>
-            <span>기아 올 뉴 k7 하이브리드 노블레스</span>
-            <span className={styles.date}>06.13</span>
-          </li> */}
+          {recentCreateList &&
+            recentCreateList.map((data) => {
+              return (
+                <li key={data.createDate}>
+                  <span className={styles.type}>
+                    {data.importStatus === "0" ? "국산" : "수입"}
+                  </span>
+                  <span>{data.carName}</span>
+                  <span className={styles.date}>{data.createDate}</span>
+                </li>
+              );
+            })}
         </ul>
       </div>
     </div>

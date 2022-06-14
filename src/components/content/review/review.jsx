@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../product/product.module.css";
 
 const Review = ({ data }) => {
-  let review = data.review;
-  let recentReviewList = data.recentReviewList;
+  const [review, setReview] = useState(data.review);
+  const [recentReviewList, setRecentReviewList] = useState(
+    data.recentReviewList
+  );
+
+  useEffect(() => {
+    if (review === "" || recentReviewList === "") {
+      setReview(data.review);
+      setRecentReviewList(data.recentReviewList);
+    }
+  }, [data]);
+
   return (
     <div className={styles.container}>
       <div>
@@ -25,15 +35,16 @@ const Review = ({ data }) => {
       <div>
         <span className={styles.listTitle}>최근 고객 후기</span>
         <ul className={`${styles.lists} ${styles.second}`}>
-          {recentReviewList.map((data) => {
-            return (
-              <li key={data.id}>
-                <span className={styles.type}>{data.id}</span>
-                <span>{data.title}</span>
-                <span className={styles.date}>{data.createDate}</span>
-              </li>
-            );
-          })}
+          {recentReviewList &&
+            recentReviewList.map((data) => {
+              return (
+                <li key={data.id}>
+                  <span className={styles.type}>{data.id}</span>
+                  <span>{data.title}</span>
+                  <span className={styles.date}>{data.createDate}</span>
+                </li>
+              );
+            })}
         </ul>
       </div>
     </div>

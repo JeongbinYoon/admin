@@ -1,0 +1,54 @@
+@values color-dark-grey, line-grey, line-light-grey from '../../../common/colors.css';
+@values font-tiny, font-large from '../../../common/size.css';
+
+.answer {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.container > div {
+  flex-shrink: 1;
+}
+
+.container > div:first-child {
+  flex-basis: 100px;
+  border-right: 1px solid line-light-grey;
+  padding-right: 20px;
+}
+
+.container > div:last-child {
+  min-width: 500px;
+  padding-left: 20px;
+}
+
+.container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lists > li {
+  display: flex;
+}
+
+/* 첫 번째 목록 */
+.lists.first > li {
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid line-light-grey;
+}
+
+.lists.first > li .count {
+  font-size: font-large;
+  font-weight: 700;
+}
+
+.chart {
+  height: 120px;
+}

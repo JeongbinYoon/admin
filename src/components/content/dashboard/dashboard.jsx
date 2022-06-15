@@ -8,6 +8,8 @@ import Product from "../product/product";
 import Review from "../review/review";
 import apiData from "../../../data/api.json";
 import axios from "axios";
+import Payment from "../payment/payment";
+import Answer from "../answer/answer";
 
 const Dashboard = (props) => {
   // let data;
@@ -19,6 +21,8 @@ const Dashboard = (props) => {
   const [review, setReview] = useState("");
   const [recentReviewList, setRecentReviewList] = useState("");
   const [userInfo, setUserInfo] = useState("");
+  const [statisticsList, setStatisticsList] = useState("");
+  const [inquiryOffer, setInquiryOffer] = useState("");
 
   // const getData = () => {
   //   setOrderAndDelivery(apiData.orderAndDeliveryInfoDto);
@@ -46,6 +50,8 @@ const Dashboard = (props) => {
       setRecentReviewList(data.recentReviewList);
       setRecentReviewList(data.recentReviewList);
       setUserInfo(data.userInfo);
+      setStatisticsList(data.statisticsList);
+      setInquiryOffer(data.inquiryOffer);
     }
   }, [data]);
 
@@ -72,7 +78,7 @@ const Dashboard = (props) => {
         />
       </div>
       <div className={styles.contentRow}>
-        <Card title={"결제 건수"} />
+        <Card title={"결제 건수"} body={<Payment data={statisticsList} />} />
         <div className={styles.contentColumn}>
           <Card
             title={"차량"}
@@ -85,7 +91,7 @@ const Dashboard = (props) => {
         </div>
       </div>
       <div className={styles.contentRow}>
-        <Card title={"답변 문의"} />
+        <Card title={"답변 문의"} body={<Answer data={inquiryOffer} />} />
         <Card title={"회원관리"} body={<Member data={userInfo} />} />
       </div>
     </>

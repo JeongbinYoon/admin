@@ -20,33 +20,27 @@ const Answer = ({ data }) => {
         <div>
           <ul className={`${styles.lists} ${styles.first}`}>
             <li>
-              <span>판매중</span>
+              <span>제안/칭찬 접수</span>
               <span>
-                <span className={styles.count}></span> 건
+                <span className={styles.count}>0</span> 건
               </span>
             </li>
             <li>
-              <span>준비중</span>
+              <span>상품문의</span>
               <span>
-                <span className={styles.count}></span> 건
+                <span className={styles.count}>0</span> 건
               </span>
             </li>
             <li>
-              <span>팬매종료</span>
+              <span>고객문의</span>
               <span>
-                <span className={styles.count}></span> 건
+                <span className={styles.count}>0</span> 건
               </span>
             </li>
           </ul>
         </div>
         <div className={styles.chart}>
-          {data && (
-            <MyResponsiveLine
-              data={chartData}
-              legend={["", ""]}
-              rotate={"-45"}
-            />
-          )}
+          {data && <MyResponsiveLine data={chartData} rotate={"0"} />}
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ const ProductList = (props) => {
   const [data, setData] = useState("");
   // 데이터 로드
   const getData = async () => {
+<<<<<<< HEAD
     const response = await axios.post("localhost/api/cars", 
     {
       "carName" : "기아",
@@ -19,10 +20,13 @@ const ProductList = (props) => {
       "orderByFilter": null,
       "paging": 50
     }).then((res) => res.data);
+=======
+    // const response = await axios.get(URL).then((res) => res.data);
+>>>>>>> 2149e21810bca96f85ef1f3ce934300dee7c165f
 
-    setData((prev) => {
-      return response;
-    });
+    // setData((prev) => {
+    //   return response;
+    // });
 
     // setData(carData);
   };

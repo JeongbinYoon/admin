@@ -15,13 +15,13 @@
 }
 
 .container > div:first-child {
-  flex-basis: 100px;
+  flex-basis: 150px;
   border-right: 1px solid line-light-grey;
   padding-right: 20px;
 }
 
 .container > div:last-child {
-  min-width: 500px;
+  min-width: 450px;
   padding-left: 20px;
 }
 
@@ -50,5 +50,6 @@
 }
 
 .chart {
+  width: 100%;
   height: 120px;
 }

@@ -16,13 +16,7 @@ const Payment = ({ data }) => {
 
   return (
     <div className={styles.payment}>
-      {data && (
-        <MyResponsiveLine
-          data={chartData}
-          legend={["날짜", "수량"]}
-          rotate={"-45"}
-        />
-      )}
+      {data && <MyResponsiveLine data={chartData} rotate={"-45"} />}
     </div>
   );
 };

@@ -17,7 +17,20 @@
 }
 
 .container > div:last-child {
+  width: 200px;
   padding-left: 20px;
+}
+
+.container > div:last-child li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container > div:last-child li span:nth-child(2) {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .container ul {

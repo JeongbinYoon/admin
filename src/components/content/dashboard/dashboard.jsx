@@ -24,17 +24,6 @@ const Dashboard = (props) => {
   const [statisticsList, setStatisticsList] = useState("");
   const [inquiryOffer, setInquiryOffer] = useState("");
 
-  // const getData = () => {
-  //   setOrderAndDelivery(apiData.orderAndDeliveryInfoDto);
-  //   setClaimAndCalculate(apiData.claimAndCalculate);
-  //   setCarInfo(apiData.carInfo);
-  //   setRecentCreateList(apiData.recentCreateList);
-  //   setReview(apiData.review);
-  //   setRecentReviewList(apiData.recentReviewList);
-  //   setRecentReviewList(apiData.recentReviewList);
-  //   setUserInfo(apiData.userInfo);
-  // };
-
   useEffect(() => {
     getData();
   }, []);
@@ -57,13 +46,13 @@ const Dashboard = (props) => {
 
   // 데이터 로드
   const getData = async () => {
-    const response = await axios
-      .get("/localhost/api/home")
-      .then((res) => res.data);
+    // const response = await axios
+    //   .get("/localhost/api/home")
+    //   .then((res) => res.data);
 
-    setData((prev) => {
-      return response;
-    });
+    // setData((prev) => {
+    //   return response;
+    // });
 
     // 로컬 json
     setData(apiData);

@@ -26,7 +26,7 @@ const Product = (props) => {
               <FontAwesomeIcon icon={faCaretDown} />
             </div>
             <div>
-              <span>준비중</span>
+              <span>판대매기</span>
               <span>
                 <span className={styles.dataValue}>0</span> 건
               </span>

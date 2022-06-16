@@ -2,6 +2,8 @@
 @values font-regular, font-large from '../../../common/size.css';
 
 .productList {
+  display: flex;
+  flex-direction: column;
   margin: 5px;
   padding: 20px;
   background-color: color-white;
@@ -11,6 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .header select {
@@ -61,7 +64,7 @@
   width: 100px;
 }
 
-.saleStatus {
+.salesStatus {
   width: 100px;
 }
 
@@ -69,19 +72,19 @@
   width: 100px;
 }
 
-.productName {
-  width: 200px;
+.name {
+  width: 220px;
 }
 
 .carNumber {
-  width: 150px;
+  width: 120px;
 }
 
-.carName {
-  width: 200px;
+.vehicleType {
+  width: 100px;
 }
 
-.seat {
+.seater {
   width: 80px;
 }
 
@@ -105,16 +108,36 @@
   width: 100px;
 }
 
-.detailedModel {
+.detailModel {
   width: 100px;
 }
 
-.gear {
+.transmission {
   width: 100px;
 }
 
 .accident {
   width: 100px;
+}
+
+.categoryName {
+  width: 100px;
+}
+
+.assessorName {
+  width: 100px;
+}
+
+.shopRegion {
+  width: 100px;
+}
+
+.stockQuantity {
+  width: 100px;
+}
+
+.createDate {
+  width: 150px;
 }
 
 /* list body */
@@ -148,4 +171,15 @@
 
 .lists_body > ul > li > div:last-child {
   border-right: none;
+}
+
+.removeBtn {
+  width: 120px;
+  height: 40px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: color-point;
+  border: none;
+  color: color-white;
+  cursor: pointer;
 }

@@ -12,9 +12,10 @@ const Search = (props) => {
   // 기간 버튼 선택
   const calendarFrom = useRef();
   const calendarTo = useRef();
+  let btns;
   const periodBtnClick = (e) => {
     // 버튼 클릭시 스타일 변경
-    const btns = e.target.parentNode.childNodes;
+    btns = e.target.parentNode.childNodes;
     [...btns]
       .filter((el) => el !== e.target)
       .map((btn) => {
@@ -76,6 +77,31 @@ const Search = (props) => {
     return year + "-" + month + "-" + day;
   }
 
+  // 초기화
+  const productnameRef = useRef();
+  const statusCheckboxesRef = useRef();
+  const categoryRef = useRef();
+  const minPriceRef = useRef();
+  const maxPriceRef = useRef();
+  const reset = () => {
+    productnameRef.current.value = "";
+    const statusCheckRef = statusCheckboxesRef.current.childNodes;
+    [...statusCheckRef]
+      .filter((el) => el.tagName === "INPUT")
+      .map((radio) => (radio.checked = false));
+    categoryRef.current.selectedIndex = 0;
+    setCategory("대분류");
+    minPriceRef.current.value = "";
+    maxPriceRef.current.value = "";
+    btns &&
+      [...btns].map((btn) => {
+        btn.classList.remove(`${styles["active"]}`);
+      });
+
+    calendarFrom.current.value = "";
+    calendarTo.current.value = "";
+  };
+
   return (
     <div className={styles.searchContainer}>
       <div className={styles.search}>
@@ -83,19 +109,33 @@ const Search = (props) => {
         <div className={styles.searchWord}>
           <div className={styles.title}>상품명</div>
           <div>
-            <input className={styles.productName} type="text" />
+            <input
+              ref={productnameRef}
+              className={styles.productName}
+              type="text"
+            />
           </div>
         </div>
 
         {/* 판매상태 */}
         <div className={styles.saleStatus}>
           <div className={styles.title}>판매상태</div>
-          <div className={styles.statusCheckbox}>
-            <input type="checkbox" value={"판매대기"} id={"wait"} />
+          <div ref={statusCheckboxesRef} className={styles.statusCheckbox}>
+            <input
+              type="radio"
+              value={"판매대기"}
+              id={"wait"}
+              name={"status"}
+            />
             <label htmlFor="wait">판매대기</label>
-            <input type="checkbox" value={"판매중"} id={"going"} />
+            <input type="radio" value={"판매중"} id={"going"} name={"status"} />
             <label htmlFor="going">판매중</label>
-            <input type="checkbox" value={"판매종료"} id={"done"} />
+            <input
+              type="radio"
+              value={"판매종료"}
+              id={"done"}
+              name={"status"}
+            />
             <label htmlFor="done">판매종료</label>
           </div>
         </div>
@@ -104,7 +144,7 @@ const Search = (props) => {
         <div className={styles.category}>
           <div className={styles.title}>카테고리</div>
           <div>
-            <select onChange={selectCategory}>
+            <select ref={categoryRef} onChange={selectCategory}>
               <option value="대분류">대분류</option>
               <option value="내차사기">내차사기</option>
               <option value="렌트">렌트</option>
@@ -135,9 +175,9 @@ const Search = (props) => {
         <div className={styles.price}>
           <div className={styles.title}>판매가</div>
           <div>
-            <input type="text" placeholder="최소" />
+            <input ref={minPriceRef} type="text" placeholder="최소" />
             <span>~</span>
-            <input type="text" placeholder="최대" />
+            <input ref={maxPriceRef} type="text" placeholder="최대" />
           </div>
         </div>
 
@@ -165,7 +205,9 @@ const Search = (props) => {
       {/* 검색, 초기화 */}
       <div className={styles.resultBtn}>
         <button className={styles.searchBtn}>검색</button>
-        <button className={styles.resetBtn}>초기화</button>
+        <button onClick={reset} className={styles.resetBtn}>
+          초기화
+        </button>
       </div>
     </div>
   );

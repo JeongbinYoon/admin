@@ -57,11 +57,13 @@ const Dashboard = (props) => {
 
   // 데이터 로드
   const getData = async () => {
-    // const response = await axios.get(URL).then((res) => res.data);
+    const response = await axios
+      .get("/localhost/api/home")
+      .then((res) => res.data);
 
-    // setData((prev) => {
-    //   return response;
-    // });
+    setData((prev) => {
+      return response;
+    });
 
     // 로컬 json
     setData(apiData);

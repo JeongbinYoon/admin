@@ -1,10 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./productList.module.css";
 import carData from "../../../data/car.json";
+import axios from "axios";
 
 const ProductList = (props) => {
   const [data, setData] = useState("");
-  const getData = () => {
+  // 데이터 로드
+  const getData = async () => {
+    const response = await axios.get(URL).then((res) => res.data);
+
+    setData((prev) => {
+      return response;
+    });
+
     setData(carData);
   };
   useEffect(() => {
@@ -24,8 +32,7 @@ const ProductList = (props) => {
     [...ul]
       .filter((li) => li.childNodes[0].childNodes[0].checked === true)
       .map((checkedLI) => {
-        //   checkedItemArr.push(Number(checkedLI.childNodes[1].innerHTML))
-        if (checkedLI.childNodes[2].innerHTML === "판매완료") {
+        if (checkedLI.childNodes[2].innerHTML === "판매종료") {
           if (window.confirm("해당 상품을 삭제하시겠습니까?")) {
             checkedLI.remove();
             alert("삭제가 완료되었습니다.");
@@ -34,26 +41,6 @@ const ProductList = (props) => {
           alert("판매 완료된 상품만 삭제할 수 있습니다.");
         }
       });
-
-    // [...ul]
-    //   .filter((li) => li.childNodes[0].childNodes[0].checked === true)
-    //   .map((checkedLI) =>
-    //     // checkedItemArr.push(Number(checkedLI.childNodes[1].innerHTML))
-    //     checkedLI.remove()
-    //   );
-
-    // if (ul[0].childNodes[2].innerHTML === "판매완료") {
-    // [...ul].map((li) => {
-    //   if (li.childNodes[2].innerHTML === "판매완료") {
-    //     return;
-    //   } else {
-    //     removeLI();
-    //   }
-    // });
-
-    // } else {
-    //   alert("판매 완료된 상품만 삭제할 수 있습니다.");
-    // }
   };
   return (
     <div className={styles.productList}>
@@ -113,7 +100,7 @@ const ProductList = (props) => {
                       ? "판매대기"
                       : item.salesStatus === "ON"
                       ? "판매중"
-                      : "판매완료"}
+                      : "판매종료"}
                   </div>
                   <div className={styles.importStatus}>
                     {item.importStatus === "0" ? "국산" : "수입"}

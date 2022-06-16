@@ -2,10 +2,10 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = function (app) {
   app.use(
-    createProxyMiddleware("/culture", {
-      target: "http://www.culture.go.kr",
+    createProxyMiddleware("/localhost", {
+      target: "http://localhost:8080",
       pathRewrite: {
-        "^/culture": "",
+        "^/localhost": "",
       },
       changeOrigin: true,
     })

@@ -22,7 +22,7 @@ const Product = (props) => {
   // 데이터 로드
   const getTotalData = async () => {
     const response = await axios
-      .put("localhost/api/car-home")
+      .get("localhost/api/car-home")
       .then((res) => res.data);
 
     setTotalData((prev) => {
@@ -44,7 +44,7 @@ const Product = (props) => {
   };
 
   useEffect(() => {
-    getData();
+    // getData();
     getTotalData();
   }, []);
 
@@ -66,7 +66,7 @@ const Product = (props) => {
 
   return (
     <div className={styles.product}>
-      {totalData && (
+      
         <div className={styles.totalData}>
           <ul>
             <li>
@@ -77,8 +77,8 @@ const Product = (props) => {
                 <span>전체</span>
                 <span>
                   <span className={styles.dataValue}>
-                    {totalData.totalQuantitiy}
-                  </span>{" "}
+                    {totalData.totalQuantity}
+                  </span>
                   건
                 </span>
               </div>
@@ -112,14 +112,13 @@ const Product = (props) => {
               <div>
                 <span>판매종료</span>
                 <span>
-                  <span className={styles.dataValue}>0={totalData.stop}</span>{" "}
+                  <span className={styles.dataValue}>{totalData.stop}</span>
                   건
                 </span>
               </div>
             </li>
           </ul>
         </div>
-      )}
 
       <Search onSearch={handleSearch} page={page} orderBy={orderBy} />
       <ProductList

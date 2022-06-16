@@ -43,7 +43,7 @@ const Cars = ({ data }) => {
           {recentCreateList &&
             recentCreateList.map((data) => {
               return (
-                <li key={data.createDate}>
+                <li key={data.id}>
                   <span className={styles.type}>
                     {data.importStatus === "0" ? "국산" : "수입"}
                   </span>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MyResponsiveLine from "../card/chart/myresponsiveline";
 import styles from "./answer.module.css";
 
-const Answer = ({ data }) => {
+const Answer = ({ data, inquiryDto }) => {
   const [chartData, setChartData] = useState();
   useEffect(() => {
     setChartData([{ id: "문의", color: "hsl(132, 70%, 50%)" }]);
@@ -22,19 +22,19 @@ const Answer = ({ data }) => {
             <li>
               <span>제안/칭찬 접수</span>
               <span>
-                <span className={styles.count}>0</span> 건
+                <span className={styles.count}>{inquiryDto.offerInquiry}</span> 건
               </span>
             </li>
             <li>
               <span>상품문의</span>
               <span>
-                <span className={styles.count}>0</span> 건
+                <span className={styles.count}>{inquiryDto.itemInquiry}</span> 건
               </span>
             </li>
             <li>
               <span>고객문의</span>
               <span>
-                <span className={styles.count}>0</span> 건
+                <span className={styles.count}>{inquiryDto.clientInquiry}</span> 건
               </span>
             </li>
           </ul>

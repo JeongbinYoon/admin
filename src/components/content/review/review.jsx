@@ -21,13 +21,13 @@ const Review = ({ data }) => {
           <li>
             <span>총 후기 수</span>
             <span>
-              <span className={styles.count}>{review.todayReview}</span> 건
+              <span className={styles.count}>{review.totalReview}</span> 건
             </span>
           </li>
           <li>
             <span>오늘 작성된 후기</span>
             <span>
-              <span className={styles.count}>{review.totalReview}</span> 건
+              <span className={styles.count}>{review.todayReview}</span> 건
             </span>
           </li>
         </ul>

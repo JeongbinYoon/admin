@@ -23,6 +23,7 @@ const Dashboard = (props) => {
   const [userInfo, setUserInfo] = useState("");
   const [statisticsList, setStatisticsList] = useState("");
   const [inquiryOffer, setInquiryOffer] = useState("");
+  const [inquiryDto, setInquiryDto] = useState("");
 
   useEffect(() => {
     getData();
@@ -41,21 +42,22 @@ const Dashboard = (props) => {
       setUserInfo(data.userInfo);
       setStatisticsList(data.statisticsList);
       setInquiryOffer(data.inquiryOffer);
+      setInquiryDto(data.inquiryDto);
     }
   }, [data]);
 
   // 데이터 로드
   const getData = async () => {
-    // const response = await axios
-    //   .get("/localhost/api/home")
-    //   .then((res) => res.data);
+    const response = await axios
+      .get("/localhost/api/home")
+      .then((res) => res.data);
 
-    // setData((prev) => {
-    //   return response;
-    // });
+    setData((prev) => {
+      return response;
+    });
 
     // 로컬 json
-    setData(apiData);
+    // setData(apiData);
   };
 
   return (
@@ -82,7 +84,7 @@ const Dashboard = (props) => {
         </div>
       </div>
       <div className={styles.contentRow}>
-        <Card title={"답변 문의"} body={<Answer data={inquiryOffer} />} />
+        <Card title={"답변 문의"} body={<Answer data={inquiryOffer} inquiryDto={inquiryDto} />} />
         <Card title={"회원관리"} body={<Member data={userInfo} />} />
       </div>
     </>

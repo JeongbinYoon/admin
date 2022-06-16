@@ -2,7 +2,7 @@
 @values font-medium from '../../common/size.css';
 
 .content {
-  width: 100%;
+  width: calc(100% - 230px);
   min-height: calc(100vh - 50px);
   padding: 0 15px 15px 15px;
   box-sizing: border-box;

@@ -1,12 +1,12 @@
 @values color-dark-grey, color-point, color-white, line-grey from '../../../common/colors.css';
-@values font-tiny, font-basic, font-regular, font-medium, font-large from '../../../common/size.css';
+@values font-medium from '../../../common/size.css';
 
 .searchContainer {
-  margin: 5px;
+  margin: 10px 5px;
 }
 
 .search {
-  padding: 0 25px;
+  padding: 0 20px;
   background-color: #f8f9fd;
   font-size: font-medium;
 }

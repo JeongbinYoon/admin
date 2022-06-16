@@ -3,6 +3,7 @@ import styles from "./product.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import Search from "../../components/content/search/search";
+import ProductList from "../../components/content/productList/productList";
 
 const Product = (props) => {
   return (
@@ -57,6 +58,7 @@ const Product = (props) => {
       </div>
 
       <Search />
+      <ProductList />
     </div>
   );
 };

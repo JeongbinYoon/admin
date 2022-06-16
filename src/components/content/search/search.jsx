@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./search.module.css";
 
-const Search = (props) => {
+const Search = ({ onSearch, page, orderBy }) => {
   const [category, setCategory] = useState("");
   const myCarCategory = useRef();
   const rentCategory = useRef();
@@ -13,6 +13,7 @@ const Search = (props) => {
   const calendarFrom = useRef();
   const calendarTo = useRef();
   let btns;
+
   const periodBtnClick = (e) => {
     // 버튼 클릭시 스타일 변경
     btns = e.target.parentNode.childNodes;
@@ -29,6 +30,7 @@ const Search = (props) => {
     const target = e.target.innerText;
     let d = new Date();
     let today = getDateStr(d);
+
     if (target === "오늘") {
       calendarFrom.current.value = today;
       calendarTo.current.value = today;
@@ -100,6 +102,74 @@ const Search = (props) => {
 
     calendarFrom.current.value = "";
     calendarTo.current.value = "";
+  };
+
+  const filteredData = {
+    carName: null,
+    saleStatus: null,
+    category: null,
+    startPrice: null,
+    endPrice: null,
+    startDate: null,
+    endDate: null,
+    orderByFilter: "판매가낮은순",
+    paging: 50,
+  };
+
+  // 검색
+  const handleSearch = () => {
+    const statusCheckRef = statusCheckboxesRef.current.childNodes;
+    let carName = productnameRef.current.value;
+    let saleStatus = null;
+    let selectedCategory = null;
+    let startPrice = Number(minPriceRef.current.value);
+    let endPrice = Number(maxPriceRef.current.value);
+
+    [...statusCheckRef]
+      .filter((el) => el.tagName === "INPUT")
+      .filter((el) => el.checked === true)
+      .filter((el) => (saleStatus = el.nextSibling.innerHTML));
+    if (category === "내차사기") {
+      selectedCategory = myCarCategory.current.value;
+    } else if (category === "렌트") {
+      selectedCategory = rentCategory.current.value;
+    }
+
+    let d = new Date();
+    let startDate = `${calendarFrom.current.value} 00:00`;
+    let endDate = `${calendarTo.current.value} 00:00`;
+
+    orderBy = orderBy === "" ? "상품등록일순" : orderBy;
+    console.log(page);
+    page = page === 0 ? null : page;
+
+    carName = carName === "" ? null : carName;
+    startPrice = startPrice === 0 ? null : startPrice;
+    endPrice = endPrice === 0 ? null : endPrice;
+    startDate = startDate === " 00:00" ? null : startDate;
+    endDate = endDate === " 00:00" ? null : endDate;
+
+    filteredData.carName = carName;
+    filteredData.saleStatus = saleStatus;
+    filteredData.category = selectedCategory;
+    filteredData.startPrice = startPrice;
+    filteredData.endPrice = endPrice;
+    filteredData.startDate = startDate;
+    filteredData.endDate = endDate;
+    filteredData.orderByFilter = orderBy;
+    filteredData.paging = page;
+    // filteredData = {
+    //   carName,
+    //   saleStatus,
+    //   category: selectedCategory,
+    //   startPrice,
+    //   endPrice,
+    //   startDate,
+    //   endDate,
+    //   orderByFilter: orderBy,
+    //   paging: page,
+    // };
+    onSearch(filteredData);
   };
 
   return (
@@ -175,9 +245,9 @@ const Search = (props) => {
         <div className={styles.price}>
           <div className={styles.title}>판매가</div>
           <div>
-            <input ref={minPriceRef} type="text" placeholder="최소" />
+            <input ref={minPriceRef} type="number" placeholder="최소" />
             <span>~</span>
-            <input ref={maxPriceRef} type="text" placeholder="최대" />
+            <input ref={maxPriceRef} type="number" placeholder="최대" />
           </div>
         </div>
 
@@ -204,7 +274,9 @@ const Search = (props) => {
 
       {/* 검색, 초기화 */}
       <div className={styles.resultBtn}>
-        <button className={styles.searchBtn}>검색</button>
+        <button onClick={handleSearch} className={styles.searchBtn}>
+          검색
+        </button>
         <button onClick={reset} className={styles.resetBtn}>
           초기화
         </button>

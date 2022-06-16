@@ -1,43 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./productList.module.css";
-import carData from "../../../data/car.json";
 import axios from "axios";
 
-const ProductList = (props) => {
-  const [data, setData] = useState("");
-  // 데이터 로드
-  const getData = async () => {
-<<<<<<< HEAD
-    const response = await axios.post("localhost/api/cars", 
-    {
-      "carName" : "기아",
-      "saleStatus": "STOP",
-      "category": null,
-      "startPrice": null,
-      "endPrice": null,
-      "startDate": "2022-06-12 00:00",
-      "endDate": "2022-06-15 00:00",
-      "orderByFilter": null,
-      "paging": 50
-    }).then((res) => res.data);
-=======
-    // const response = await axios.get(URL).then((res) => res.data);
->>>>>>> 2149e21810bca96f85ef1f3ce934300dee7c165f
-
-    // setData((prev) => {
-    //   return response;
-    // });
-
-    // setData(carData);
-  };
-  useEffect(() => {
-    getData();
-  }, []);
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
+const ProductList = ({ data, onPageChange, onOrderChange }) => {
   //   상품삭제
   const listRef = useRef();
   const checkedItemArr = [];
@@ -57,18 +22,28 @@ const ProductList = (props) => {
         }
       });
   };
+
+  const handlePageChange = (e) => {
+    let page = Number(e.target.value);
+    onPageChange(page);
+  };
+
+  const handleOrderChange = (e) => {
+    let orderBy = e.target.value;
+    onOrderChange(orderBy);
+  };
   return (
     <div className={styles.productList}>
       <div className={styles.header}>
         <span>상품목록 (총 {data ? data.cnt : 0}개)</span>
         <div className={styles.selectBox}>
-          <select>
+          <select onChange={handleOrderChange}>
             <option value="판매가낮은순">판매가 낮은순</option>
             <option value="판매가높은순">판매가 높은순</option>
             <option value="상품등록일순">상품 등록일순</option>
             <option value="상품수정일순">상품 수정일순</option>
           </select>
-          <select>
+          <select onChange={handlePageChange}>
             <option value="50">50개씩</option>
             <option value="100">100개씩</option>
             <option value="200">200개씩</option>

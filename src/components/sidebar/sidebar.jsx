@@ -1,9 +1,16 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./sidebar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-const Sidebar = (props) => {
+const Sidebar = ({ onNavigate }) => {
+  const navigate = useNavigate();
+  const handleNavigate = (path) => {
+    navigate(path);
+    onNavigate(path);
+  };
+
   const openSubNav = (e) => {
     const subNav = e.currentTarget.nextSibling;
     if (subNav.classList.contains(`${styles["active"]}`)) {
@@ -29,7 +36,7 @@ const Sidebar = (props) => {
               <FontAwesomeIcon icon={faCaretDown} />
             </div>
             <ul className={styles.nav_sub}>
-              <li>상품조회/수정</li>
+              <li onClick={() => handleNavigate("/product")}>상품조회/수정</li>
               <li>상품등록</li>
               <li>배송정보 관리</li>
             </ul>

@@ -4,12 +4,12 @@ import styles from "../card/card.module.css";
 import Member from "../member/member";
 import Calculation from "../order/calculation";
 import Order from "../order/order";
-import Product from "../product/product";
 import Review from "../review/review";
 import apiData from "../../../data/api.json";
 import axios from "axios";
 import Payment from "../payment/payment";
 import Answer from "../answer/answer";
+import Cars from "../cars/cars";
 
 const Dashboard = (props) => {
   // let data;
@@ -82,7 +82,7 @@ const Dashboard = (props) => {
         <div className={styles.contentColumn}>
           <Card
             title={"차량"}
-            body={<Product data={{ carInfo, recentCreateList }} />}
+            body={<Cars data={{ carInfo, recentCreateList }} />}
           />
           <Card
             title={"고객후기"}

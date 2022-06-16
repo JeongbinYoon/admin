@@ -1,6 +1,8 @@
 @values font-tiny: 8px;
-@values font-small: 8px;
 @values font-basic: 10px;
 @values font-regular: 12px;
 @values font-medium: 14px;
 @values font-large: 16px;
+@values font-extraLarge: 18px;
+@values font-big: 20px;
+@values font-veryBig: 24px;

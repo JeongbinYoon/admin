@@ -1,8 +1,8 @@
 import userEvent from "@testing-library/user-event";
 import React, { useEffect, useState } from "react";
-import styles from "./product.module.css";
+import styles from "./cars.module.css";
 
-const Product = ({ data }) => {
+const Cars = ({ data }) => {
   const [carInfo, setCarInfo] = useState(data.carInfo);
   const [recentCreateList, setRecentCreateList] = useState(
     data.recentCreateList
@@ -58,4 +58,4 @@ const Product = ({ data }) => {
   );
 };
 
-export default Product;
+export default Cars;

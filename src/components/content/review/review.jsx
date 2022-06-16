@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "../product/product.module.css";
+import styles from "../cars/cars.module.css";
 
 const Review = ({ data }) => {
   const [review, setReview] = useState(data.review);

@@ -7,10 +7,8 @@ const Payment = ({ data }) => {
   useEffect(() => {
     setChartData([{ id: "결제 건수", color: "hsl(132, 70%, 50%)" }]);
   }, [data]);
-  // let chartData;
   const makeChartData = async () => {
     let valArr = [];
-    //   chartData = [{ id: "결제 건수", color: "hsl(132, 70%, 50%)" }];
     await data.map((val) => valArr.push({ x: val.date, y: val.count }));
     chartData.map((item) => (item.data = valArr));
   };

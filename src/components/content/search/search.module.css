@@ -1,0 +1,140 @@
+@values color-dark-grey, color-point, color-white, line-grey from '../../../common/colors.css';
+@values font-tiny, font-basic, font-regular, font-medium, font-large from '../../../common/size.css';
+
+.searchContainer {
+  margin: 5px;
+}
+
+.search {
+  padding: 0 25px;
+  background-color: #f8f9fd;
+  font-size: font-medium;
+}
+
+.search input,
+.search select {
+  height: 40px;
+  color: color-dark-grey;
+  border: 1px solid line-grey;
+  box-sizing: border-box;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.search > div {
+  padding: 20px 0;
+  border-bottom: 1px solid line-grey;
+}
+
+.search > div:last-child {
+  border-bottom: 0;
+}
+
+.search > div > div:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.searchWord,
+.saleStatus,
+.category,
+.price,
+.period {
+  display: flex;
+}
+
+.title {
+  width: 150px;
+  color: color-dark-grey;
+  font-weight: 700;
+}
+
+/* 판매상태 */
+.statusCheckbox input {
+  width: 20px;
+  height: 20px;
+}
+
+.statusCheckbox label {
+  margin-right: 15px;
+}
+
+/* 카테고리 */
+.category select {
+  width: 200px;
+  margin-right: 10px;
+  padding: 5px;
+  outline: none;
+}
+
+.category select:disabled {
+  background-color: lightgrey;
+}
+
+/* 판매가 */
+.price input {
+  padding: 10px;
+}
+.price span {
+  margin: 0 10px;
+}
+
+/* 기간 */
+.periodBtns {
+  display: flex;
+  align-content: center;
+  margin-right: 10px;
+}
+
+.periodBtn {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 5px 10px;
+  background-color: color-white;
+  color: color-dark-grey;
+  border: 1px solid line-grey;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.periodBtn.active {
+  color: color-point;
+  border: 1px solid color-point;
+}
+
+.period span {
+  margin: 0 10px;
+}
+
+.period input {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* 검색, 초기화 */
+.resultBtn {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: color-white;
+}
+
+.resultBtn button {
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.searchBtn {
+  background-color: color-point;
+  color: color-white;
+  border: none;
+}
+
+.resetBtn {
+  background-color: color-white;
+  border: 1px solid line-grey;
+}

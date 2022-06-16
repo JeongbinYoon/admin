@@ -1,10 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Dashboard from "./dashboard/dashboard";
 import styles from "./content.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import Product from "../../routes/product/product";
 
-const Content = (props) => {
+const Content = ({ path }) => {
+  useEffect(() => {
+    changeContent();
+  }, [path]);
+
+  const changeContent = () => {
+    console.log(path);
+    let content;
+    if (path === "/admin") {
+      content = <Dashboard />;
+      return content;
+    } else if (path === "/product") {
+      content = <Product />;
+      return content;
+    }
+  };
+
   const [toggleTitle, setToggleTitle] = useState(true);
   const toggleContentTitle = (e) => {
     const target = e.currentTarget.nextSibling;
@@ -28,7 +46,8 @@ const Content = (props) => {
         </button>
         <div className={`${styles.contentTitle} `}>대시보드</div>
       </div>
-      <Dashboard />
+      {/* <Dashboard /> */}
+      {changeContent()}
     </div>
   );
 };

@@ -1,0 +1,48 @@
+@values color-white, color-dark-grey, color-point, line-grey from '../../common/colors.css';
+@values font-tiny, font-regular, font-medium, font-large, font-extraLarge, font-veryBig from '../../common/size.css';
+
+.totalData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin: 10px 5px;
+  background-color: color-white;
+}
+
+.totalData ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.totalData ul li {
+  display: flex;
+  align-items: center;
+  margin: 0 30px;
+}
+
+.iconBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: color-dark-grey;
+  color: color-white;
+  border-radius: 50%;
+}
+
+.totalData ul li div:last-child {
+  display: flex;
+  flex-direction: column;
+  font-size: font-medium;
+}
+
+.totalData .dataValue {
+  line-height: font-extraLarge;
+  color: color-point;
+  font-size: font-veryBig;
+}

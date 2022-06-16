@@ -8,6 +8,7 @@ import axios from "axios";
 import carData from "../../data/car.json";
 
 const Product = (props) => {
+  const [totalData, setTotalData] = useState("");
   const [data, setData] = useState("");
   const [page, setPage] = useState(0);
   const [orderBy, setOrderBy] = useState("");
@@ -16,7 +17,19 @@ const Product = (props) => {
     getData();
   }, [page]);
 
+  useEffect(() => {});
+
   // 데이터 로드
+  const getTotalData = async () => {
+    const response = await axios
+      .put("localhost/api/car-home")
+      .then((res) => res.data);
+
+    setTotalData((prev) => {
+      return response;
+    });
+  };
+
   const getData = async (filteredData) => {
     console.log(filteredData);
     const response = await axios
@@ -29,13 +42,11 @@ const Product = (props) => {
 
     // setData(carData);
   };
-  useEffect(() => {
-    getData();
-  }, []);
 
   useEffect(() => {
-    console.log(data);
-  }, [data]);
+    getData();
+    getTotalData();
+  }, []);
 
   // 검색
   const handleSearch = (filteredData) => {
@@ -55,54 +66,60 @@ const Product = (props) => {
 
   return (
     <div className={styles.product}>
-      <div className={styles.totalData}>
-        <ul>
-          <li>
-            <div className={styles.iconBox}>
-              <FontAwesomeIcon icon={faCaretDown} />
-            </div>
-            <div>
-              <span>전체</span>
-              <span>
-                <span className={styles.dataValue}>0</span> 건
-              </span>
-            </div>
-          </li>
-          <li>
-            <div className={styles.iconBox}>
-              <FontAwesomeIcon icon={faCaretDown} />
-            </div>
-            <div>
-              <span>판대매기</span>
-              <span>
-                <span className={styles.dataValue}>0</span> 건
-              </span>
-            </div>
-          </li>
-          <li>
-            <div className={styles.iconBox}>
-              <FontAwesomeIcon icon={faCaretDown} />
-            </div>
-            <div>
-              <span>판매중</span>
-              <span>
-                <span className={styles.dataValue}>0</span> 건
-              </span>
-            </div>
-          </li>
-          <li>
-            <div className={styles.iconBox}>
-              <FontAwesomeIcon icon={faCaretDown} />
-            </div>
-            <div>
-              <span>판매종료</span>
-              <span>
-                <span className={styles.dataValue}>0</span> 건
-              </span>
-            </div>
-          </li>
-        </ul>
-      </div>
+      {totalData && (
+        <div className={styles.totalData}>
+          <ul>
+            <li>
+              <div className={styles.iconBox}>
+                <FontAwesomeIcon icon={faCaretDown} />
+              </div>
+              <div>
+                <span>전체</span>
+                <span>
+                  <span className={styles.dataValue}>
+                    {totalData.totalQuantitiy}
+                  </span>{" "}
+                  건
+                </span>
+              </div>
+            </li>
+            <li>
+              <div className={styles.iconBox}>
+                <FontAwesomeIcon icon={faCaretDown} />
+              </div>
+              <div>
+                <span>판매대기</span>
+                <span>
+                  <span className={styles.dataValue}>{totalData.ready}</span> 건
+                </span>
+              </div>
+            </li>
+            <li>
+              <div className={styles.iconBox}>
+                <FontAwesomeIcon icon={faCaretDown} />
+              </div>
+              <div>
+                <span>판매중</span>
+                <span>
+                  <span className={styles.dataValue}>{totalData.on}</span> 건
+                </span>
+              </div>
+            </li>
+            <li>
+              <div className={styles.iconBox}>
+                <FontAwesomeIcon icon={faCaretDown} />
+              </div>
+              <div>
+                <span>판매종료</span>
+                <span>
+                  <span className={styles.dataValue}>0={totalData.stop}</span>{" "}
+                  건
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      )}
 
       <Search onSearch={handleSearch} page={page} orderBy={orderBy} />
       <ProductList

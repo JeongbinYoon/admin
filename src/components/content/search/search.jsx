@@ -140,14 +140,21 @@ const Search = ({ onSearch, page, orderBy }) => {
     let endDate = `${calendarTo.current.value} 00:00`;
 
     orderBy = orderBy === "" ? "상품등록일순" : orderBy;
+    page = page === 0 ? 50 : page;
     console.log(page);
-    page = page === 0 ? null : page;
 
     carName = carName === "" ? null : carName;
     startPrice = startPrice === 0 ? null : startPrice;
     endPrice = endPrice === 0 ? null : endPrice;
     startDate = startDate === " 00:00" ? null : startDate;
     endDate = endDate === " 00:00" ? null : endDate;
+    if (saleStatus === "판매대기") {
+      saleStatus = "READY";
+    } else if (saleStatus === "판매중") {
+      saleStatus = "ON";
+    } else if (saleStatus === "판매종료") {
+      saleStatus = "STOP";
+    }
 
     filteredData.carName = carName;
     filteredData.saleStatus = saleStatus;

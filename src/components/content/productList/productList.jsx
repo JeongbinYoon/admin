@@ -7,13 +7,24 @@ const ProductList = (props) => {
   const [data, setData] = useState("");
   // 데이터 로드
   const getData = async () => {
-    const response = await axios.get(URL).then((res) => res.data);
+    const response = await axios.post("localhost/api/cars", 
+    {
+      "carName" : "기아",
+      "saleStatus": "STOP",
+      "category": null,
+      "startPrice": null,
+      "endPrice": null,
+      "startDate": "2022-06-12 00:00",
+      "endDate": "2022-06-15 00:00",
+      "orderByFilter": null,
+      "paging": 50
+    }).then((res) => res.data);
 
     setData((prev) => {
       return response;
     });
 
-    setData(carData);
+    // setData(carData);
   };
   useEffect(() => {
     getData();

@@ -23,11 +23,11 @@ const Product = (props) => {
       .put("localhost/api/cars", filteredData)
       .then((res) => res.data);
 
-    // setData((prev) => {
-    //   return response;
-    // });
+    setData((prev) => {
+      return response;
+    });
 
-    setData(carData);
+    // setData(carData);
   };
   useEffect(() => {
     getData();

@@ -1,5 +1,5 @@
-@values color-white, color-dark-grey, color-point, line-grey from '../../common/colors.css';
-@values font-tiny, font-regular, font-medium, font-large, font-extraLarge, font-veryBig from '../../common/size.css';
+@values color-white, color-dark-grey, color-point, line-grey from '../../../common/colors.css';
+@values font-tiny, font-regular, font-medium, font-large, font-extraLarge, font-veryBig from '../../../common/size.css';
 
 .totalData {
   display: flex;

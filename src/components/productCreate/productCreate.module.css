@@ -1,0 +1,98 @@
+@values color-point, color-grey, color-white, color-dark-grey, line-grey from '../../common/colors.css';
+@values font-regular, font-medium, font-large from '../../common/size.css';
+
+.container {
+  margin: 10px 5px;
+  background-color: color-white;
+}
+
+.container input,
+.container select {
+  min-width: 200px;
+  height: 40px;
+  background-color: #f9f9f9;
+  border: 1px solid line-grey;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.container select {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+/* title */
+.container_title {
+  padding: 15px;
+  border-bottom: 1px solid line-grey;
+  font-weight: 700;
+}
+
+/* body */
+.container_body {
+  padding: 20px;
+}
+
+/* category */
+.category_btns {
+  display: flex;
+  width: fit-content;
+}
+
+.category_btns > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 40px;
+  margin-bottom: 5px;
+  background-color: color-white;
+  color: color-grey;
+  font-size: font-medium;
+  border: 1px solid line-grey;
+  cursor: pointer;
+}
+
+.category_btns > div.active {
+  background-color: color-point;
+  color: color-white;
+  border: none;
+}
+
+/* 판매가 */
+.container_body > div {
+  display: flex;
+}
+
+.container_body .body_title {
+  width: 150px;
+}
+
+.container_body input {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.salePrice .container_body > div,
+.carInfo .container_body > div {
+  padding: 15px;
+  border-bottom: 1px solid line-grey;
+}
+
+.salePrice .container_body > div:first-child,
+.carInfo .container_body > div:first-child {
+  padding-top: 0;
+}
+
+.salePrice .container_body > div:last-child,
+.carInfo .container_body > div:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.salePrice .calcBtn {
+  margin-left: 20px;
+  padding: 0 10px;
+  background-color: color-white;
+  border: 1px solid line-grey;
+}

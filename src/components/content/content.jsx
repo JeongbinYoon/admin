@@ -6,22 +6,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import Product from "../../routes/product/product";
 
-const Content = ({ path }) => {
-  useEffect(() => {
-    changeContent();
-  }, [path]);
+const Content = ({ path, content }) => {
+  // useEffect(() => {
+  //   changeContent();
+  // }, [path]);
 
-  const changeContent = () => {
-    console.log(path);
-    let content;
-    if (path === "/admin") {
-      content = <Dashboard />;
-      return content;
-    } else if (path === "/product") {
-      content = <Product />;
-      return content;
-    }
-  };
+  // const changeContent = () => {
+  //   console.log(path);
+  //   let content;
+  //   if (path === "/admin") {
+  //     content = <Dashboard />;
+  //     return content;
+  //   } else if (path === "/product") {
+  //     content = <Product />;
+  //     return content;
+  //   }
+  // };
 
   const [toggleTitle, setToggleTitle] = useState(true);
   const toggleContentTitle = (e) => {
@@ -47,7 +47,8 @@ const Content = ({ path }) => {
         <div className={`${styles.contentTitle} `}>대시보드</div>
       </div>
       {/* <Dashboard /> */}
-      {changeContent()}
+      {content}
+      {/* {changeContent()} */}
     </div>
   );
 };

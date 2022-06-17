@@ -8,7 +8,7 @@ const Sidebar = ({ onNavigate }) => {
   const navigate = useNavigate();
   const handleNavigate = (path) => {
     navigate(path);
-    onNavigate(path);
+    // onNavigate(path);
   };
 
   const openSubNav = (e) => {
@@ -28,7 +28,7 @@ const Sidebar = ({ onNavigate }) => {
         <span className={styles.userName}>아이디</span>
       </div>
       <nav id={styles.nav}>
-        <div>대시보드</div>
+        <div onClick={() => handleNavigate("/admin")}>대시보드</div>
         <ul className={styles.nav}>
           <li>
             <div onClick={openSubNav}>
@@ -36,8 +36,12 @@ const Sidebar = ({ onNavigate }) => {
               <FontAwesomeIcon icon={faCaretDown} />
             </div>
             <ul className={styles.nav_sub}>
-              <li onClick={() => handleNavigate("/product")}>상품조회/수정</li>
-              <li>상품등록</li>
+              <li onClick={() => handleNavigate("/product/list")}>
+                상품조회/수정
+              </li>
+              <li onClick={() => handleNavigate("/product/create")}>
+                상품등록
+              </li>
               <li>배송정보 관리</li>
             </ul>
           </li>

@@ -91,7 +91,13 @@ const ProductList = ({ data, onPageChange, onOrderChange, onTotalData }) => {
                     <input type="checkbox" />
                   </div>
                   <div className={styles.deliveryId}>{item.deliveryId}</div>
-                  <div className={styles.deliveryStatus}>{item.deliveryStatus}</div>
+                  <div className={styles.deliveryStatus}>
+                    {item.deliveryStatus === "READY"
+                      ? "배송준비"
+                      : item.deliveryStatus === "GOING"
+                      ? "배송중"
+                      : "배송완료"}
+                  </div>
                   <div className={styles.receiver}>{item.receiver}</div>
                   <div className={styles.phoneNumber}>{item.phoneNumber}</div>
                   <div className={styles.zipCode}>{item.address.zipCode}</div>

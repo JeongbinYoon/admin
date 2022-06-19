@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import DeliverySearch from "../search/deliverySearch";
-import DeliveryList from "./deliveryList";
+import OrderSearch from "../search/orderSearch";
+import OrderList from "./orderList";
 import axios from "axios";
 
-const Delivery = (props) => {
+const OrderManage = (props) => {
   const [data, setData] = useState("");
   const [page, setPage] = useState(0);
 
@@ -15,7 +15,7 @@ const Delivery = (props) => {
   const getData = async (filteredData) => {
     console.log(filteredData);
     const response = await axios
-      .put("localhost/api/deliveries", filteredData)
+      .put("localhost/api/orders", filteredData)
       .then((res) => res.data);
 
     setData((prev) => {
@@ -37,8 +37,8 @@ const Delivery = (props) => {
 
   return (
     <div>
-      <DeliverySearch onSearch={handleSearch} page={page} />
-      <DeliveryList
+      <OrderSearch onSearch={handleSearch} page={page} />
+      <OrderList
         data={data}
         onPageChange={handlePageChange}
       />
@@ -46,4 +46,4 @@ const Delivery = (props) => {
   );
 };
 
-export default Delivery;
+export default OrderManage;

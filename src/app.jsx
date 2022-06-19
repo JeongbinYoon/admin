@@ -4,6 +4,7 @@ import Admin from "./routes/admin";
 import Product from "./routes/product/product";
 import Create from "./routes/product/create/create";
 import Delivery from "./routes/product/delivery/delivery";
+import Order from "./routes/order/order";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/product" element={<Product />} />
         <Route exact path="/create" element={<Create />} />
         <Route exact path="/delivery" element={<Delivery />} />
+        <Route exact path="/order" element={<Order />} />
       </Routes>
     </Router>
   );

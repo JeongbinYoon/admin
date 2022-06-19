@@ -51,7 +51,7 @@ const Sidebar = ({ onNavigate }) => {
               <FontAwesomeIcon icon={faCaretDown} />
             </div>
             <ul className={styles.nav_sub}>
-              <li>주문통합검색</li>
+              <li onClick={() => handleNavigate("/order")}>주문통합검색</li>
               <li>미결제 확인</li>
             </ul>
           </li>

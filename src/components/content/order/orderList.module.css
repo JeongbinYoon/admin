@@ -50,94 +50,45 @@
   border-right: none;
 }
 
-.check {
-  width: 35px;
-}
 
-.check input {
-  width: 20px;
-  height: 30px;
-  margin: 0;
-}
-
-.productNumber {
+.orderId {
   width: 100px;
 }
 
-.salesStatus {
+.orderStatus {
   width: 100px;
 }
 
-.importStatus {
+.holderName {
   width: 100px;
 }
 
-.name {
+.holderNumber {
   width: 220px;
 }
 
-.carNumber {
+.account {
   width: 120px;
 }
 
-.vehicleType {
-  width: 100px;
+.accountNumber {
+  width: 160px;
 }
 
-.seater {
-  width: 80px;
+.itemName {
+  width: 200px;
 }
 
-.mileage {
-  width: 100px;
+.paymentDate {
+  width: 160px;
 }
 
-.color {
-  width: 80px;
+.deadlinePaymentDate {
+  width: 160px;
 }
 
-.fuel {
-  width: 80px;
-}
-
-.manufacturer {
-  width: 120px;
-}
-
-.model {
-  width: 100px;
-}
-
-.detailModel {
-  width: 100px;
-}
-
-.transmission {
-  width: 100px;
-}
-
-.accident {
-  width: 100px;
-}
-
-.categoryName {
-  width: 100px;
-}
-
-.assessorName {
-  width: 100px;
-}
-
-.shopRegion {
-  width: 100px;
-}
-
-.stockQuantity {
-  width: 100px;
-}
-
-.createDate {
-  width: 150px;
+.orderDate {
+  width: 160px;
 }
 
 /* list body */

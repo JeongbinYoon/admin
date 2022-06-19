@@ -42,7 +42,7 @@ const Sidebar = ({ onNavigate }) => {
               <li onClick={() => handleNavigate("/create")}>
                 상품등록
               </li>
-              <li>배송정보 관리</li>
+              <li onClick={() => handleNavigate("/delivery")}>배송정보 관리</li>
             </ul>
           </li>
           <li>

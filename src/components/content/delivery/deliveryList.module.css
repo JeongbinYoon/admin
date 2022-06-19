@@ -1,0 +1,149 @@
+@values color-point, color-white, color-dark-grey, line-grey, line-light-grey from '../../../common/colors.css';
+@values font-regular, font-large from '../../../common/size.css';
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 20px;
+  background-color: color-white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.header select {
+  height: 40px;
+  margin-left: 10px;
+  padding: 5px;
+  color: color-dark-grey;
+  border: 1px solid line-grey;
+}
+
+/* 상품 리스트 */
+/* list header */
+
+.lists {
+  width: 100%;
+  overflow: scroll;
+  border: 2px solid line-grey;
+}
+.lists_header {
+  display: inline-flex;
+  border-bottom: 2px solid line-grey;
+}
+
+.lists_header > div {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-right: 1px solid line-grey;
+  box-sizing: border-box;
+}
+
+.lists_header > div:last-child {
+  border-right: none;
+}
+
+.check {
+  width: 35px;
+}
+
+.check input {
+  width: 20px;
+  height: 30px;
+  margin: 0;
+}
+
+.deliveryId {
+  width: 100px;
+}
+
+.deliveryStatus {
+  width: 100px;
+}
+
+.receiver {
+  width: 100px;
+}
+
+.phoneNumber {
+  width: 220px;
+}
+
+.zipCode {
+  width: 120px;
+}
+
+.city {
+  width: 160px;
+}
+
+.street {
+  width: 80px;
+}
+
+.hopeDate {
+  width: 160px;
+}
+
+.deliveryCompDate {
+  width: 160px;
+}
+
+.createDate {
+  width: 160px;
+}
+
+.modifiedDate {
+  width: 160px;
+}
+
+/* list body */
+.lists_body {
+  display: inline-flex;
+  height: 400px;
+  overflow: scroll;
+}
+
+.lists_body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lists_body > ul > li {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  border-bottom: 1px solid line-light-grey;
+}
+
+.lists_body > ul > li > div {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-right: 1px solid line-light-grey;
+  box-sizing: border-box;
+}
+
+.lists_body > ul > li > div:last-child {
+  border-right: none;
+}
+
+.removeBtn {
+  width: 120px;
+  height: 40px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: color-point;
+  border: none;
+  color: color-white;
+  cursor: pointer;
+}

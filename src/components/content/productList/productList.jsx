@@ -2,12 +2,18 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./productList.module.css";
 import axios from "axios";
 
-const ProductList = ({ data, onPageChange, onOrderChange }) => {
+const ProductList = ({ data, onPageChange, onOrderChange, onTotalData }) => {
   //   상품삭제
+  const handleTotalData =() => {
+    onTotalData();
+  }
   const removeData = async (checkedItems) => {
     const response = await axios
       .put("localhost/api/cars-delete", checkedItems)
-      .then((res) => res.data);
+      .then((res) => {
+        alert(res.data.data);
+        handleTotalData();
+      });
   };
 
   const listRef = useRef();

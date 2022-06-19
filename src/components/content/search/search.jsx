@@ -154,6 +154,8 @@ const Search = ({ onSearch, page, orderBy }) => {
       saleStatus = "ON";
     } else if (saleStatus === "판매종료") {
       saleStatus = "STOP";
+    } else if (saleStatus === "전체") {
+      saleStatus = null;
     }
 
     filteredData.carName = carName;
@@ -214,6 +216,13 @@ const Search = ({ onSearch, page, orderBy }) => {
               name={"status"}
             />
             <label htmlFor="done">판매종료</label>
+            <input
+              type="radio"
+              value={"전체"}
+              id={"all"}
+              name={"status"}
+            />
+            <label htmlFor="all">전체</label>
           </div>
         </div>
 

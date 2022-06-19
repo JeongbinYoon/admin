@@ -57,11 +57,11 @@ const Sidebar = ({ onNavigate }) => {
           </li>
           <li>
             <div onClick={openSubNav}>
-              <span>정산관리</span>
+              <span>회원관리</span>
               <FontAwesomeIcon icon={faCaretDown} />
             </div>
             <ul className={styles.nav_sub}>
-              <li>서브 카테고리</li>
+              <li onClick={() => handleNavigate("/user")}>회원 검색</li>
               <li>서브 카테고리</li>
             </ul>
           </li>

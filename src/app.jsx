@@ -5,6 +5,7 @@ import Product from "./routes/product/product";
 import Create from "./routes/product/create/create";
 import Delivery from "./routes/product/delivery/delivery";
 import Order from "./routes/order/order";
+import User from "./routes/user/user";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/create" element={<Create />} />
         <Route exact path="/delivery" element={<Delivery />} />
         <Route exact path="/order" element={<Order />} />
+        <Route exact path="/user" element={<User />} />
       </Routes>
     </Router>
   );

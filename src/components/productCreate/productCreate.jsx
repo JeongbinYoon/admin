@@ -19,16 +19,20 @@ const ProductCreate = (props) => {
         <div className={styles.container_title}>카테고리</div>
         <div className={styles.container_body}>
           <div
-            onClick={categoryBtnClick}
-            className={styles.category_btns}
-            style={{ border: "none" }}
+            className={styles.catetory_select}
+            style={{ borderBottom: "none" }}
           >
-            <div className={`${styles["catetory_search"]} ${styles["active"]}`}>
-              카레고리명 검색
-            </div>
-            <div className={styles.catetory_select}>카레고리명 선택</div>
+            카레고리명 선택
           </div>
-          <input type="text" placeholder="카테고리명 입력" />
+          <select>
+            <option value="">선택</option>
+            <option value="차량검색">차량검색</option>
+            <option value="리스차량">리스차량</option>
+            <option value="테마기획전">테마기획전</option>
+            <option value="위클릭특가">위클릭특가</option>
+            <option value="중고차렌트">중고차렌트</option>
+            <option value="신차렌트">신차렌트</option>
+          </select>
         </div>
       </div>
 
@@ -62,13 +66,6 @@ const ProductCreate = (props) => {
               <input type="number" placeholder="숫자만 입력" />
             </div>
           </div>
-          <div>
-            <div className={styles.body_title}>총 판매비용</div>
-            <div>
-              <input type="number" placeholder="숫자만 입력" />
-            </div>
-            <button className={styles.calcBtn}>총 비용 계산</button>
-          </div>
         </div>
       </div>
 
@@ -89,6 +86,18 @@ const ProductCreate = (props) => {
             <div>
               <select>
                 <option value="">차종을 선택해주세요</option>
+                <option value="경차">경차</option>
+                <option value="소형차">소형차</option>
+                <option value="준중형차">준중형차</option>
+                <option value="중형차">중형차</option>
+                <option value="대형차">대형차</option>
+                <option value="스포츠카">스포츠카</option>
+                <option value="SUV">SUV</option>
+                <option value="RV">RV</option>
+                <option value="경승합차">경승합차</option>
+                <option value="승합차">승합차</option>
+                <option value="화물차">화물차</option>
+                <option value="버스">버스</option>
               </select>
             </div>
           </div>
@@ -98,6 +107,12 @@ const ProductCreate = (props) => {
             <div>
               <select>
                 <option value="">인승을 입력해주세요</option>
+                <option value="4">4인승</option>
+                <option value="5">5인승</option>
+                <option value="7">7인승</option>
+                <option value="9">9인승</option>
+                <option value="11">11인승</option>
+                <option value="15">15인승</option>
               </select>
             </div>
           </div>
@@ -121,6 +136,12 @@ const ProductCreate = (props) => {
             <div>
               <select>
                 <option value="">색상을 선택해주세요</option>
+                <option value="흰색">흰색</option>
+                <option value="진주색">진주색</option>
+                <option value="검정색">검정색</option>
+                <option value="쥐색">쥐색</option>
+                <option value="은색">은색</option>
+                <option value="빨간색">빨간색</option>
               </select>
             </div>
           </div>
@@ -130,33 +151,54 @@ const ProductCreate = (props) => {
             <div>
               <select>
                 <option value="">연료를 선택해주세요</option>
+                <option value="가솔린">가솔린</option>
+                <option value="디젤">디젤</option>
+                <option value="전기">전기</option>
+                <option value="수소전기">수소전기</option>
+                <option value="CNG">CNG</option>
               </select>
             </div>
           </div>
 
           <div>
-            <div className={styles.body_title}>제조사/모델</div>
+            <div className={styles.body_title}>수입여부</div>
             <div>
               <select>
                 <option value="">국산</option>
-              </select>
-              <select>
-                <option value="">제조사</option>
-              </select>
-              <select>
-                <option value="">모델</option>
-              </select>
-              <select>
-                <option value="">세부모델</option>
+                <option value="">수입</option>
               </select>
             </div>
           </div>
 
           <div>
-            <div className={styles.body_title}>상품상태</div>
+            <div className={styles.body_title}>제조사</div>
+            <div>
+              <input type="text" />
+            </div>
+          </div>
+
+          <div>
+            <div className={styles.body_title}>모델</div>
+            <div>
+              <input type="text" />
+            </div>
+          </div>
+
+          <div>
+            <div className={styles.body_title}>세부모델</div>
+            <div>
+              <input type="text" />
+            </div>
+          </div>
+
+          <div>
+            <div className={styles.body_title}>판매상태</div>
             <div>
               <select>
-                <option value="">준비중</option>
+                <option value="">선택</option>
+                <option value="READY">준비중</option>
+                <option value="ON">판매중</option>
+                <option value="STOP">판매종료</option>
               </select>
             </div>
           </div>
@@ -172,7 +214,11 @@ const ProductCreate = (props) => {
             <div className={styles.body_title}>변속기</div>
             <div>
               <select>
-                <option value="">오토</option>
+                <option value="">선택</option>
+                <option value="오토">오토</option>
+                <option value="수동">수동</option>
+                <option value="세미오토">세미오토</option>
+                <option value="CVT">CVT</option>
               </select>
             </div>
           </div>
@@ -180,9 +226,14 @@ const ProductCreate = (props) => {
           <div>
             <div className={styles.body_title}>사고유무</div>
             <div>
-              <select>
-                <option value="">무사고</option>
-              </select>
+              <div onClick={categoryBtnClick} className={styles.category_btns}>
+                <div className={styles.catetory_select}>있음</div>
+                <div
+                  className={`${styles["catetory_search"]} ${styles["active"]}`}
+                >
+                  없음
+                </div>
+              </div>
             </div>
           </div>
 
@@ -190,8 +241,10 @@ const ProductCreate = (props) => {
             <div className={styles.body_title}>구동방식</div>
             <div>
               <select>
-                <option value="">전륜</option>
-                <option value="">후륜</option>
+                <option value="">선택</option>
+                <option value="전륜">전륜</option>
+                <option value="후륜">후륜</option>
+                <option value="4륜">4륜</option>
               </select>
             </div>
           </div>
@@ -221,17 +274,17 @@ const ProductCreate = (props) => {
           <div>
             <div className={styles.body_title}>판금</div>
             <div>
-              <input type="text" value={`${0}건`} disabled />
+              <input type="number" placeholder={"0건"} />
             </div>
           </div>
           <div>
             <div className={styles.body_title}>교환</div>
             <div>
-              <input type="text" value={`${0}건`} disabled />
+              <input type="number" placeholder={"0건"} />
             </div>
           </div>
           <div>
-            <div className={styles.body_title}>교환</div>
+            <div className={styles.body_title}>용도변경</div>
             <div>
               <div onClick={categoryBtnClick} className={styles.category_btns}>
                 <div className={styles.catetory_select}>있음</div>
@@ -244,9 +297,9 @@ const ProductCreate = (props) => {
             </div>
           </div>
           <div>
-            <div className={styles.body_title}>세부상태</div>
+            <div className={styles.body_title}>세부상태 확인</div>
             <div>
-              <input type="text" value={`확인필요 ${0}건`} disabled />
+              <input type="number" placeholder={"0건"} />
             </div>
           </div>
         </div>
@@ -259,13 +312,13 @@ const ProductCreate = (props) => {
           <div>
             <div className={styles.body_title}>내차 피해</div>
             <div>
-              <input type="text" value={`${0}건`} disabled />
+              <input type="text" placeholder={"0건"} />
             </div>
           </div>
           <div>
             <div className={styles.body_title}>상대차 피해</div>
             <div>
-              <input type="text" value={`${0}건`} disabled />
+              <input type="text" placeholder={"0건"} />
             </div>
           </div>
           <div>
@@ -284,9 +337,13 @@ const ProductCreate = (props) => {
           </div>
           <div>
             <div className={styles.body_title}>특수사고이력</div>
-            <div>
-              <input type="text" value={`전손 ${0}`} disabled />
-              <input type="text" value={`도난 ${0}`} disabled />
+            <div onClick={categoryBtnClick} className={styles.category_btns}>
+              <div className={styles.catetory_select}>있음</div>
+              <div
+                className={`${styles["catetory_search"]} ${styles["active"]}`}
+              >
+                없음
+              </div>
             </div>
           </div>
         </div>
@@ -297,24 +354,16 @@ const ProductCreate = (props) => {
         <div className={styles.container_title}>차량평가사</div>
         <div className={styles.container_body}>
           <div>
+            <div className={styles.body_title}>사번</div>
             <div>
-              <div onClick={categoryBtnClick} className={styles.category_btns}>
-                <div
-                  className={`${styles["catetory_search"]} ${styles["active"]}`}
-                >
-                  차량평가사 검색
-                </div>
-                <div className={styles.catetory_select}>차량평가사 선택</div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div>
-              <input type="text" placeholder="차량평가사 입력" />
+              <input type="text" placeholder={"0건"} />
             </div>
           </div>
         </div>
       </div>
+
+      {/* 등록하기 */}
+      <button className={styles.submitBtn}>등록하기</button>
     </div>
   );
 };

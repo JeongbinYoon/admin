@@ -1,5 +1,8 @@
 import React from "react";
 import styles from "./productCreate.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
 const ProductCreate = (props) => {
   const categoryBtnClick = (e) => {
     console.log(e.target);
@@ -15,7 +18,11 @@ const ProductCreate = (props) => {
       <div className={styles.container}>
         <div className={styles.container_title}>카테고리</div>
         <div className={styles.container_body}>
-          <div onClick={categoryBtnClick} className={styles.category_btns}>
+          <div
+            onClick={categoryBtnClick}
+            className={styles.category_btns}
+            style={{ border: "none" }}
+          >
             <div className={`${styles["catetory_search"]} ${styles["active"]}`}>
               카레고리명 검색
             </div>
@@ -186,6 +193,124 @@ const ProductCreate = (props) => {
                 <option value="">전륜</option>
                 <option value="">후륜</option>
               </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 상품 이미지 */}
+      <div className={styles.container}>
+        <div className={styles.container_title}>상품이미지</div>
+        <div className={styles.container_body}>
+          <div>
+            <div className={styles.body_title}>대표이미지</div>
+            <div>
+              <label className={styles.inputFileButton} for="input-file">
+                +
+              </label>
+              <input type="file" id="input-file" style={{ display: "none" }} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 성능, 상태점검기록 */}
+      <div className={styles.container}>
+        <div className={styles.container_title}>성능, 상태점검기록</div>
+        <div className={styles.container_body}>
+          <div>
+            <div className={styles.body_title}>판금</div>
+            <div>
+              <input type="text" value={`${0}건`} disabled />
+            </div>
+          </div>
+          <div>
+            <div className={styles.body_title}>교환</div>
+            <div>
+              <input type="text" value={`${0}건`} disabled />
+            </div>
+          </div>
+          <div>
+            <div className={styles.body_title}>교환</div>
+            <div>
+              <div onClick={categoryBtnClick} className={styles.category_btns}>
+                <div className={styles.catetory_select}>있음</div>
+                <div
+                  className={`${styles["catetory_search"]} ${styles["active"]}`}
+                >
+                  없음
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className={styles.body_title}>세부상태</div>
+            <div>
+              <input type="text" value={`확인필요 ${0}건`} disabled />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 보험 이력 */}
+      <div className={styles.container}>
+        <div className={styles.container_title}>보험 이력</div>
+        <div className={styles.container_body}>
+          <div>
+            <div className={styles.body_title}>내차 피해</div>
+            <div>
+              <input type="text" value={`${0}건`} disabled />
+            </div>
+          </div>
+          <div>
+            <div className={styles.body_title}>상대차 피해</div>
+            <div>
+              <input type="text" value={`${0}건`} disabled />
+            </div>
+          </div>
+          <div>
+            <div className={styles.body_title}>용도변경이력</div>
+            <div>
+              <div onClick={categoryBtnClick} className={styles.category_btns}>
+                <div className={styles.catetory_select}>있음</div>
+
+                <div
+                  className={`${styles["catetory_search"]} ${styles["active"]}`}
+                >
+                  없음
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className={styles.body_title}>특수사고이력</div>
+            <div>
+              <input type="text" value={`전손 ${0}`} disabled />
+              <input type="text" value={`도난 ${0}`} disabled />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 차량평가사 */}
+      <div className={styles.container}>
+        <div className={styles.container_title}>차량평가사</div>
+        <div className={styles.container_body}>
+          <div>
+            <div>
+              <div onClick={categoryBtnClick} className={styles.category_btns}>
+                <div
+                  className={`${styles["catetory_search"]} ${styles["active"]}`}
+                >
+                  차량평가사 검색
+                </div>
+                <div className={styles.catetory_select}>차량평가사 선택</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <input type="text" placeholder="차량평가사 입력" />
             </div>
           </div>
         </div>

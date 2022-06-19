@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./list.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import Search from "../../../components/content/search/search";
-import ProductList from "../../../components/content/productList/productList";
+import Search from "../search/search";
+import ProductList from "../productList/productList";
 import axios from "axios";
-import carData from "../../../data/car.json";
+// import carData from "../../../data/car.json";
 
 const List = (props) => {
   const [totalData, setTotalData] = useState("");

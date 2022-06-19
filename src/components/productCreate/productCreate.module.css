@@ -33,6 +33,19 @@
   padding: 20px;
 }
 
+.container_body > div {
+  padding: 20px 0;
+  border-bottom: 1px solid line-grey;
+}
+
+.container_body > div:first-child {
+  padding-top: 0;
+}
+.container_body > div:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
 /* category */
 .category_btns {
   display: flex;
@@ -95,4 +108,24 @@
   padding: 0 10px;
   background-color: color-white;
   border: 1px solid line-grey;
+}
+
+/* 상품 이미지 */
+.imgUploadBtn[type="file"] {
+  width: 150px;
+  height: 500px;
+}
+
+.inputFileButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  color: color-grey;
+  font-size: 64px;
+  font-weight: 100;
+  cursor: pointer;
+  border: 1px solid line-grey;
+  border-radius: 4px;
 }

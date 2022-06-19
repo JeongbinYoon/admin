@@ -5,7 +5,7 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import Search from "../search/search";
 import ProductList from "../productList/productList";
 import axios from "axios";
-// import carData from "../../../data/car.json";
+import carData from "../../../data/car.json";
 
 const List = (props) => {
   const [totalData, setTotalData] = useState("");
@@ -32,19 +32,19 @@ const List = (props) => {
 
   const getData = async (filteredData) => {
     console.log(filteredData);
-    const response = await axios
-      .put("localhost/api/cars", filteredData)
-      .then((res) => res.data);
+    // const response = await axios
+    //   .put("localhost/api/cars", filteredData)
+    //   .then((res) => res.data);
 
-    setData((prev) => {
-      return response;
-    });
+    // setData((prev) => {
+    //   return response;
+    // });
 
-    // setData(carData);
+    setData(carData);
   };
 
   useEffect(() => {
-    // getData();
+    getData();
     getTotalData();
   }, []);
 

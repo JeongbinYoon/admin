@@ -4,23 +4,38 @@ import axios from "axios";
 
 const ProductList = ({ data, onPageChange, onOrderChange }) => {
   //   상품삭제
+  const removeData = async (checkedItems) => {
+    const response = await axios
+      .put("localhost/api/cars-delete", checkedItems)
+      .then((res) => res.data);
+  };
+
   const listRef = useRef();
-  const checkedItemArr = [];
-  const checkedItem = { id: checkedItemArr };
+  const removeAlert = (checkedItemArr, checkedItems) => {
+    const productNumber = [];
+    if (window.confirm("해당 상품을 삭제하시겠습니까?")) {
+      checkedItemArr.map((el) => console.log(el.childNodes[1].innerHTML));
+      checkedItemArr.map((el) => {
+        productNumber.push(el.childNodes[1].innerHTML);
+        el.remove();
+      });
+
+      Object.assign(checkedItems, { id: productNumber });
+      removeData(checkedItems);
+    }
+  };
   const remove = () => {
+    const checkedItemArr = [];
+    const checkedItems = { id: checkedItemArr };
     const ul = listRef.current.childNodes;
     [...ul]
       .filter((li) => li.childNodes[0].childNodes[0].checked === true)
       .map((checkedLI) => {
         if (checkedLI.childNodes[2].innerHTML === "판매종료") {
-          if (window.confirm("해당 상품을 삭제하시겠습니까?")) {
-            checkedLI.remove();
-            alert("삭제가 완료되었습니다.");
-          }
-        } else {
-          alert("판매 완료된 상품만 삭제할 수 있습니다.");
+          checkedItemArr.push(checkedLI);
         }
       });
+    removeAlert(checkedItemArr, checkedItems);
   };
 
   const handlePageChange = (e) => {

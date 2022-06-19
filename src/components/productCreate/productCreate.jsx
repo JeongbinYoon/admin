@@ -1,4 +1,5 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom';
 import styles from "./productCreate.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -9,11 +10,17 @@ import axios from "axios";
 const ProductCreate = (props) => {
   // 데이터 업로드
   // const [data, setData] = useState("");
+  const navigate = useNavigate();
   const upLoadData = async (data) => {
     console.log(data);
     const response = await axios
       .post("localhost/api/car-save", data)
-      .then((res) => alert(res.data.data));
+      .then((res) => {
+        alert(res.data.data);
+        if(res.data.status === 200){
+          navigate('/admin');
+        }
+      });
   };
 
   const [accident, setAccident] = useState(false);

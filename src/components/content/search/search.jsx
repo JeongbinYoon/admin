@@ -250,8 +250,8 @@ const Search = ({ onSearch, page, orderBy }) => {
             ) : (
               <select className={styles.rentCategory} ref={rentCategory}>
                 <option value="중분류">중분류</option>
-                <option value="중고차 렌트">중고차 렌트</option>
-                <option value="신차 렌트">신차 렌트</option>
+                <option value="중고차렌트">중고차 렌트</option>
+                <option value="신차렌트">신차 렌트</option>
               </select>
             )}
           </div>

@@ -36,10 +36,10 @@ const Sidebar = ({ onNavigate }) => {
               <FontAwesomeIcon icon={faCaretDown} />
             </div>
             <ul className={styles.nav_sub}>
-              <li onClick={() => handleNavigate("/product/list")}>
+              <li onClick={() => handleNavigate("/product")}>
                 상품조회/수정
               </li>
-              <li onClick={() => handleNavigate("/product/create")}>
+              <li onClick={() => handleNavigate("/create")}>
                 상품등록
               </li>
               <li>배송정보 관리</li>

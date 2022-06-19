@@ -13,7 +13,7 @@ const ProductCreate = (props) => {
     console.log(data);
     const response = await axios
       .post("localhost/api/car-save", data)
-      .then((res) => res.data);
+      .then((res) => alert(res.data.data));
   };
 
   const [accident, setAccident] = useState(false);

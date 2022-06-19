@@ -14,7 +14,7 @@ const List = (props) => {
   const [orderBy, setOrderBy] = useState("");
 
   useEffect(() => {
-    getData();
+    // getData();
   }, [page]);
 
   useEffect(() => {});

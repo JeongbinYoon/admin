@@ -9,8 +9,8 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/admin" element={<Admin />} />
-        <Route exact path="/product/list" element={<Product />} />
-        <Route exact path="/product/create" element={<Create />} />
+        <Route exact path="/product" element={<Product />} />
+        <Route exact path="/create" element={<Create />} />
       </Routes>
     </Router>
   );

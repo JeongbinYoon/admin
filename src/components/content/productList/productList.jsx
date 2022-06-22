@@ -9,7 +9,7 @@ const ProductList = ({ data, onPageChange, onOrderChange, onTotalData }) => {
   }
   const removeData = async (checkedItems) => {console.log(checkedItems)
     const response = await axios
-      .delete("localhost/api/cars-delete", {data: {checkedItems}})
+      .delete("localhost/api/cars-delete", {data: checkedItems})
       .then((res) => {
         alert(res.data.data);
         handleTotalData();
@@ -22,7 +22,7 @@ const ProductList = ({ data, onPageChange, onOrderChange, onTotalData }) => {
     if (window.confirm("해당 상품을 삭제하시겠습니까?")) {
       checkedItemArr.map((el) => console.log(el.childNodes[1].innerHTML));
       checkedItemArr.map((el) => {
-        productNumber.push(el.childNodes[1].innerHTML);
+        productNumber.push(Number(el.childNodes[1].innerHTML));
         el.remove();
       });
 

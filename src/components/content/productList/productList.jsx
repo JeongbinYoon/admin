@@ -7,9 +7,9 @@ const ProductList = ({ data, onPageChange, onOrderChange, onTotalData }) => {
   const handleTotalData =() => {
     onTotalData();
   }
-  const removeData = async (checkedItems) => {
+  const removeData = async (checkedItems) => {console.log(checkedItems)
     const response = await axios
-      .put("localhost/api/cars-delete", checkedItems)
+      .delete("localhost/api/cars-delete", {data: {checkedItems}})
       .then((res) => {
         alert(res.data.data);
         handleTotalData();
@@ -26,13 +26,13 @@ const ProductList = ({ data, onPageChange, onOrderChange, onTotalData }) => {
         el.remove();
       });
 
-      Object.assign(checkedItems, { id: productNumber });
+      Object.assign(checkedItems, {id: productNumber});
       removeData(checkedItems);
     }
   };
   const remove = () => {
     const checkedItemArr = [];
-    const checkedItems = { id: checkedItemArr };
+    const checkedItems = {id: checkedItemArr};
     const ul = listRef.current.childNodes;
     [...ul]
       .filter((li) => li.childNodes[0].childNodes[0].checked === true)

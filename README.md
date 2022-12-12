@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# K Car 관리자 페이지
+## 기획 의도
+kcar의 방대한 데이터관리 및 상품을 효율적으로 모니터링 할 수 있는 관리자페이지를 제공하고자 백엔드 개발자 1명과 함께 협업하였다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+자세한 백엔드 사항은 👉 https://github.com/yeonwoo2/shopping-mall
 
-## Available Scripts
+## 사용 기술
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/PostCSS-DD3A0A?style=flat&logo=PostCSS&logoColor=white"/>
 
-In the project directory, you can run:
 
-### `yarn start`
+***
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> ### 대시보드<br/>
+Nivo 차트 라이브러리를 사용하여 통계를 나타냄
+<img src="https://user-images.githubusercontent.com/86540140/207052229-d75dc3d7-04ee-4f6d-9367-cf4ffe4a77eb.jpg" width="750"><br/>
+<img src="https://user-images.githubusercontent.com/86540140/207052291-aa932e83-c1e5-4c52-8e1d-0c930737381c.jpg" width="750"><br/>
+<br/>
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> ### 상품 검색 및 삭제<br/>
+<img src="https://user-images.githubusercontent.com/86540140/207052799-6bb67b2a-a925-4778-a8c3-eadcf7918a4d.jpg" width="750"><br/>
 
-### `yarn test`
+<br/>
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> ### 상품관리 페이지상품 삭제 테스트<br/>
+<img src="https://user-images.githubusercontent.com/86540140/207052373-bc4484af-b4db-4c98-80f4-8b4650cbc876.jpg" width="750"><br/>
+<br/>
 
-### `yarn build`
+<br/>
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> ### 상품 주요 정보 등록<br/>
+<img src="https://user-images.githubusercontent.com/86540140/207053364-e51b1c0c-efe2-4c38-9301-caad4f30f358.jpg" width="750"><br/>
+<br/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
